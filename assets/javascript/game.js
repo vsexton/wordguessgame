@@ -14,7 +14,7 @@ let docWrongGuess = document.getElementsByClassName('wrongGuess');
 //=============================================================
 
 // Split chosen word into an array
-
+var () 
 
 //create underscore based on length of word
 
