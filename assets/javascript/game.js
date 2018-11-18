@@ -3,7 +3,7 @@ const word = ['mistletoe','jinglebells','eggnog','naughty','nice','nutcracker','
 
 let randNum = Math.floor(Math.random() * word.length);
 let choosenWord = word[randNum];
-let word = [];
+//let word = [];
 let wrongWord = [];
 let underScore = [];
 
@@ -14,21 +14,26 @@ let docWrongGuess = document.getElementsByClassName('wrongGuess');
 //=============================================================
 
 // Split chosen word into an array
-var () 
+
 
 //create underscore based on length of word
 
-let  generateUnderScore = () => {
-    for(let i = 0; i < word.length; i++){
+//let  generateUnderScore = () => {
+    for(let i = 0; i < choosenWord.length; i++){
         underScore.push('_');
-       
+       console.log(underScore);
     }
-    return underScore;
-}
- console.log(word);
+ //   return underScore;
+//}
+ console.log(choosenWord);
 
 //Push underScore on to page
-underScore.push(keyword);
+//underScore.push(keyword);
+var stuff = document.getElementById("underScore");
+console.log(stuff);
+stuff.innerHTML("<p>Blah</p>");
+// console.log(document.getElementById("underScore"))
+
 
 //get user guess
 document.addEventListener('keypress', (event) => { 
