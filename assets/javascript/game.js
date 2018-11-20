@@ -14,14 +14,24 @@ var doubleWord = ['a','b','c',
 const wordBank = ['Mistletoe','noel','jinglebells','frosty','naughty','nice','nutcracker','cookies','jolly','elves','snowman'];
 let randNum = [Math.floor(Math.random() * wordBank.length)];
 let choosenWord = wordBank[randNum];
-
 let wrongWord = [];
 let underScore = [];
-let lettersInWord = [];
-let numBlanks = 0;
-let rightGuessCounter = 0;
-let blanksAndSuccesses =[];
 
+//ResetGlobalVariables();
+
+//function ResetGlobalVariables(){
+//	Mistletoe = 1;
+//	noel = 2;
+//	jinglebells = 3;
+//	frosty = 4;
+//	naughty = 5;
+//	nice = 6;
+//	nutcracker = 7;
+//	cookies = 8;
+//	jolly = 9;
+//	elves = 10;
+//	snowman =11;
+//}
 
 
 //Dom manipulation
@@ -32,10 +42,6 @@ console.log(choosenWord);
 
 //Main
 //=============================================================
-
-
-	
-
 // Split chosen word into an array
 
 
@@ -65,6 +71,7 @@ document.addEventListener('keypress', (event) => {
 let keyword = String.fromCharCode(event.keyCode)// if users guess is right
    if(choosenWord.indexOf(keyword) > -1){
 
+	
     //add to right words array
    
 //replace undrscore with right letter
@@ -82,19 +89,3 @@ let keyword = String.fromCharCode(event.keyCode)// if users guess is right
        docWrongGuess[0].innerHTML = wrongWord;
    } 
     });
-//RESET
-	//===========================================================
-	letterGuessed = 0;
-	rightGuessCounter = 0;
-	guessesLeft = 9;
-	wrongLetters =[];
-	blanksAndSuccesses =[];
-	doubleWord = ['a','b','c',
-					  'd','e','f',
-					  'g','h','i',
-					  'j','k','l',
-					  'm','n','o',
-					  'p','q','r',
-					  's','t','u',
-					  'v','w','x',
-					  'y','z'];
