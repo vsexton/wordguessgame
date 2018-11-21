@@ -75,18 +75,4 @@ let keyword = String.fromCharCode(event.keyCode)// if users guess is right
        docWrongGuess[0].innerHTML = wrongWord;
    } 
     });
-    function resetGame() {
-        remainingGuesses = maxTries;
-        gameStarted = false;}
-        document.onkeydown = function(event) {
-            // If we finished a game, dump one keystroke and reset.
-            if(hasFinished) {
-                resetGame();
-                hasFinished = false;
-            } else {
-                // Check to make sure a-z was pressed.
-                if(event.keyCode >= 65 && event.keyCode <= 90) {
-                    makeGuess(event.key.toLowerCase());
-                }
-            }
-        };
+   
