@@ -11,28 +11,12 @@ var doubleWord = ['a','b','c',
                   'y','z'];
                   
            
-const wordBank = ['Mistletoe','noel','jinglebells','frosty','naughty','nice','nutcracker','cookies','jolly','elves','snowman'];
+const wordBank = ['elf','noel','carols','frosty','naughty','nice','snowflake','rudolph','grinch','fairy','angel','holiday','family'];
 let randNum = [Math.floor(Math.random() * wordBank.length)];
 let choosenWord = wordBank[randNum];
 let wrongWord = [];
 let underScore = [];
-
-//ResetGlobalVariables();
-
-//function ResetGlobalVariables(){
-//	Mistletoe = 1;
-//	noel = 2;
-//	jinglebells = 3;
-//	frosty = 4;
-//	naughty = 5;
-//	nice = 6;
-//	nutcracker = 7;
-//	cookies = 8;
-//	jolly = 9;
-//	elves = 10;
-//	snowman =11;
-//}
-
+let reset = [];
 
 //Dom manipulation
 let docUnderScore = document.getElementsByClassName('underScore');
@@ -58,7 +42,7 @@ console.log(choosenWord);
 
 //underScore.push(keyword);
 var stuff = document.getElementById("underScore");
-console.log(stuff);
+// console.log(stuff);
 stuff.innerHTML = underScore.join(' ')
 
 //var stuff = document.getElementById("underScore");
@@ -75,7 +59,9 @@ let keyword = String.fromCharCode(event.keyCode)// if users guess is right
     //add to right words array
    
 //replace undrscore with right letter
-     underScore[choosenWord.indexOf(keyword)] = keyword; 
+     underScore[choosenWord.indexOf(keyword)] = keyword;
+     console.log(choosenWord.indexOf(keyword), underScore); 
+     stuff.innerHTML = underScore;
      //docUnderScore[0].innerHTML = underScore.join(' ');
      //choosenWord[0].innerHTML = rightGuess;
 // checks to see if user word matches guesses 
@@ -89,3 +75,18 @@ let keyword = String.fromCharCode(event.keyCode)// if users guess is right
        docWrongGuess[0].innerHTML = wrongWord;
    } 
     });
+    function resetGame() {
+        remainingGuesses = maxTries;
+        gameStarted = false;}
+        document.onkeydown = function(event) {
+            // If we finished a game, dump one keystroke and reset.
+            if(hasFinished) {
+                resetGame();
+                hasFinished = false;
+            } else {
+                // Check to make sure a-z was pressed.
+                if(event.keyCode >= 65 && event.keyCode <= 90) {
+                    makeGuess(event.key.toLowerCase());
+                }
+            }
+        };
